@@ -1,8 +1,9 @@
-﻿namespace Estrutura.Business.Helpers.Enums
+﻿namespace Estrutura.Shared.NotificacaoWs
 {
     public enum TipoNotificacao
     {
         ERRO,
         AVISO
     }
+}
 }

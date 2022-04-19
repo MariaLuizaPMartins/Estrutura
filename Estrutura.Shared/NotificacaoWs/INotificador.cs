@@ -1,7 +1,6 @@
-﻿using Estrutura.Business.Helpers;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Estrutura.Business.Services.Interfaces
+namespace Estrutura.Shared.NotificacaoWs
 {
     public interface INotificador
     {

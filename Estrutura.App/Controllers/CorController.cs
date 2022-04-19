@@ -1,4 +1,5 @@
-﻿using Estrutura.Business.Services.Interfaces;
+﻿using Estrutura.Business.Services.CorServices;
+using Estrutura.Shared.NotificacaoWs;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;

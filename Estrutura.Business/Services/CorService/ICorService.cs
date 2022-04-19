@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 
-namespace Estrutura.Business.Services.Interfaces
+namespace Estrutura.Business.Services.CorService
 {
     public interface ICorService
     {

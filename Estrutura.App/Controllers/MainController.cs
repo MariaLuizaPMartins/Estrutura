@@ -1,6 +1,4 @@
-﻿using Estrutura.Business.Helpers;
-using Estrutura.Business.Helpers.Enums;
-using Estrutura.Business.Services.Interfaces;
+﻿using Estrutura.Shared.NotificacaoWs;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;

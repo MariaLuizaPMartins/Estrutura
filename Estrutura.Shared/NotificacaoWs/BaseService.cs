@@ -1,8 +1,4 @@
-﻿using Estrutura.Business.Helpers;
-using Estrutura.Business.Helpers.Enums;
-using Estrutura.Business.Services.Interfaces;
-
-namespace Estrutura.Business.Services
+﻿namespace Estrutura.Shared.NotificacaoWs
 {
     public class BaseService
     {

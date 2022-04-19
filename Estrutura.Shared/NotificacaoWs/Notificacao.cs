@@ -1,6 +1,4 @@
-﻿using Estrutura.Business.Helpers.Enums;
-
-namespace Estrutura.Business.Helpers
+﻿namespace Estrutura.Shared.NotificacaoWs
 {
     public class Notificacao
     {

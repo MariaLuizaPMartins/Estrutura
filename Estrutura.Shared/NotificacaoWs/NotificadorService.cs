@@ -1,14 +1,11 @@
-﻿using Estrutura.Business.Helpers;
-using Estrutura.Business.Helpers.Enums;
-using Estrutura.Business.Services.Interfaces;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace Estrutura.Business.Services
+namespace Estrutura.Shared.NotificacaoWs
 {
     public class NotificadorService : INotificador
     {
-        private List<Notificacao> _notificacoes;
+        private readonly List<Notificacao> _notificacoes;
 
         public NotificadorService()
         {
