@@ -1,5 +1,6 @@
-﻿using Estrutura.Business.Services.CorServices;
+﻿using Estrutura.Business.Services.CorService;
 using Estrutura.Shared.NotificacaoWs;
+using Estrutura.Shared.ViewModels.Cor;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Threading.Tasks;
@@ -18,11 +19,11 @@ namespace Estrutura.App.Controllers
         }
 
         [HttpPost("cadastrar")]
-        public async Task<ActionResult> Cadastrar(string descricao)
+        public async Task<ActionResult> Cadastrar(CorCadastroViewModel cadastroViewModel)
         {
             try
             {
-                return CustomResponse(await _corService.Cadastrar(descricao));
+                return CustomResponse(await _corService.Cadastrar(cadastroViewModel));
             }
             catch (Exception ex)
             {
@@ -33,11 +34,11 @@ namespace Estrutura.App.Controllers
         }
 
         [HttpPut("alterar")]
-        public async Task<ActionResult> Alterar(Guid id, string novaDescricao)
+        public async Task<ActionResult> Alterar(CorAlteracaoViewModel alteracaoViewModel)
         {
             try
             {
-                await _corService.Alterar(id, novaDescricao);
+                await _corService.Alterar(alteracaoViewModel);
             }
             catch (Exception ex)
             {
@@ -63,7 +64,7 @@ namespace Estrutura.App.Controllers
         }
 
         [HttpGet("obter")]
-        public async Task<ActionResult> Obter(Guid id)
+        public async Task<ActionResult<CorViewModel>> Obter(Guid id)
         {
             try
             {

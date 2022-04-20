@@ -12,15 +12,24 @@ namespace Estrutura.Data.Repositories.CorRepository
     {
         public CorRepository(AppDbContext context) : base(context) { }
 
-        public bool ValidarDescricaoExistente(string descricao)
+        public bool VerificarSeDescricaoJaExiste(string descricao, Guid? id = null)
         {
-            return _DbSet.Any(d => d.Descricao == descricao);
+            if (id.HasValue)
+                return _DbSet.Any(d => d.Descricao == descricao && d.Id != id);
+            else
+                return _DbSet.Any(d => d.Descricao == descricao);
         }
 
         public async Task<Guid> Cadastrar(Cor cor)
         {
             await Insert(cor);
             return cor.Id;
+        }
+
+        public async Task SalvarAlteracoes(Cor cor)
+        {
+            cor.DataHoraUltimaAlteracao = DateTime.UtcNow;
+            await SaveChanges();
         }
 
         public async Task Excluir(Guid id)
@@ -33,6 +42,11 @@ namespace Estrutura.Data.Repositories.CorRepository
             return await _DbSet.Where(d => d.Id == id)
                                .Select(d => d.Descricao)
                                .FirstOrDefaultAsync();
+        }
+
+        public async Task<Cor> ObterParaAlterar(Guid id)
+        {
+            return await _DbSet.FindAsync(id);
         }
     }
 }

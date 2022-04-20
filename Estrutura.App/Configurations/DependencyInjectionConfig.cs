@@ -1,8 +1,9 @@
-﻿using Estrutura.Business.Services;
-using Estrutura.Business.Services.Interfaces;
+﻿using Estrutura.Business.Services.CorService;
 using Estrutura.Data.Context;
 using Estrutura.Data.Repositories;
+using Estrutura.Data.Repositories.CorRepository;
 using Estrutura.Data.Repositories.Interfaces;
+using Estrutura.Shared.NotificacaoWs;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Estrutura.App.Configurations

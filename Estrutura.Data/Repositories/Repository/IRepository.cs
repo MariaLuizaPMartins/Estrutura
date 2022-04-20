@@ -7,5 +7,6 @@ namespace Estrutura.Data.Repositories.Repository
     {
         Task Insert(TEntity entity);
         Task Delete(params object[] keyValues);
+        Task<int> SaveChanges();
     }
 }

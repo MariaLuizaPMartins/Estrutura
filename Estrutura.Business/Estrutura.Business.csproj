@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Estrutura.Data\Estrutura.Data.csproj" />
     <ProjectReference Include="..\Estrutura.Shared\Estrutura.Shared.csproj" />
   </ItemGroup>

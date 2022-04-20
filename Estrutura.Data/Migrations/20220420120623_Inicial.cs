@@ -12,7 +12,10 @@ namespace Estrutura.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Descricao = table.Column<string>(type: "varchar(50)", nullable: false)
+                    Descricao = table.Column<string>(type: "varchar(50)", nullable: false),
+                    DataHoraCadastro = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    DataHoraUltimaAlteracao = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    Ativo = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -24,7 +27,10 @@ namespace Estrutura.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "TEXT", nullable: false),
-                    Descricao = table.Column<string>(type: "varchar(50)", nullable: false)
+                    Descricao = table.Column<string>(type: "varchar(50)", nullable: false),
+                    DataHoraCadastro = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    DataHoraUltimaAlteracao = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    Ativo = table.Column<bool>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -32,7 +32,7 @@ namespace Estrutura.Data.Repositories.Repository
             await SaveChanges();
         }
 
-        private async Task<int> SaveChanges()
+        public async Task<int> SaveChanges()
         {
             return await _AppDbContext.SaveChangesAsync();
         }

@@ -22,6 +22,15 @@ namespace Estrutura.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DataHoraCadastro")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("DataHoraUltimaAlteracao")
+                        .HasColumnType("datetime2");
+
                     b.Property<string>("Descricao")
                         .IsRequired()
                         .HasColumnType("varchar(50)");
@@ -38,6 +47,15 @@ namespace Estrutura.Data.Migrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("Ativo")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DataHoraCadastro")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DataHoraUltimaAlteracao")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Descricao")

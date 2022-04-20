@@ -8,9 +8,13 @@ namespace Estrutura.Data.Repositories.CorRepository
     {
         Task<Guid> Cadastrar(Cor cor);
         Task Excluir(Guid id);
+        Task SalvarAlteracoes(Cor cor);
 
 
         Task<string> ObterDescricao(Guid id);
-        bool ValidarDescricaoExistente(string descricao);
+        Task<Cor> ObterParaAlterar(Guid id);
+
+
+        bool VerificarSeDescricaoJaExiste(string descricao, Guid? id = null);
     }
 }
