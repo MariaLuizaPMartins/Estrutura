@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Estrutura.Shared.NotificacaoWs;
+using System;
 
 namespace Estrutura.Data.Models
 {
-    public class Entity
+    public class Entity : FluentValidationType
     {
         public Entity()
         {

@@ -63,6 +63,15 @@ namespace Estrutura.Shared.Resources {
         /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
+        public static string CampoObrigatorio {
+            get {
+                return ResourceManager.GetString("CampoObrigatorio", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
         public static string JaExisteCadastroComMesmaDescricao {
             get {
                 return ResourceManager.GetString("JaExisteCadastroComMesmaDescricao", resourceCulture);
@@ -84,6 +93,15 @@ namespace Estrutura.Shared.Resources {
         public static string RegistroNaoEncontrado {
             get {
                 return ResourceManager.GetString("RegistroNaoEncontrado", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string TamanhoMaximo {
+            get {
+                return ResourceManager.GetString("TamanhoMaximo", resourceCulture);
             }
         }
     }

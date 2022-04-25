@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Estrutura.Data\Estrutura.Data.csproj" />
-    <ProjectReference Include="..\Estrutura.Shared\Estrutura.Shared.csproj" />
   </ItemGroup>
 
 </Project>

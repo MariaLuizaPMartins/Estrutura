@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Estrutura.Business.Validations;
 using Estrutura.Data.Models;
 using Estrutura.Data.Repositories.CorRepository;
 using Estrutura.Shared.NotificacaoWs;
@@ -31,6 +32,11 @@ namespace Estrutura.Business.Services.CorService
                 return Guid.Empty;
             }
 
+            if (!ExecutarValidacao(new CorValidation(), cor))
+            {
+                return Guid.Empty;
+            }
+
             GravarLog("cadastrar", "cor", cor.Descricao);
 
             return await _corRepository.Cadastrar(cor);
@@ -52,6 +58,11 @@ namespace Estrutura.Business.Services.CorService
 
             cor.Descricao = alteracaoViewModel.Descricao;
             cor.Ativo = alteracaoViewModel.Ativo;
+
+            if (!ExecutarValidacao(new CorValidation(), cor))
+            {
+                return;
+            }
 
             await _corRepository.SalvarAlteracoes(cor);
 
