@@ -1,4 +1,5 @@
-﻿using FluentValidation;
+﻿using Estrutura.Shared.Resources;
+using FluentValidation;
 using FluentValidation.Results;
 
 namespace Estrutura.Shared.NotificacaoWs
@@ -20,6 +21,16 @@ namespace Estrutura.Shared.NotificacaoWs
         protected void NotificarErro(string mensagem)
         {
             _notificador.Adicionar(new Notificacao(mensagem, TipoNotificacao.ERRO));
+        }
+
+        protected void NotificarAvisoRegistroNaoEncontrado(string nome)
+        {
+            NotificarAviso(string.Format(ResourceMensagem.RegistroNaoEncontrado, nome));
+        }
+
+        protected void NotificarAvisoRegistroNaoEncontrada(string nome)
+        {
+            NotificarAviso(string.Format(ResourceMensagem.RegistroNaoEncontrada, nome));
         }
 
         protected bool ExecutarValidacao<TV, TE>(TV validacao, TE entidade) where TV : AbstractValidator<TE> where TE : FluentValidationType

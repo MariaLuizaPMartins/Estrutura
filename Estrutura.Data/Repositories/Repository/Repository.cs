@@ -1,11 +1,11 @@
 ﻿using Estrutura.Data.Context;
-using Estrutura.Data.Models;
+using Estrutura.Data.Models.Entity;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 
 namespace Estrutura.Data.Repositories.Repository
 {
-    public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
+    public class Repository<TEntity> : IRepository<TEntity> where TEntity : EntityBase
     {
         public readonly DbSet<TEntity> _DbSet;
         public readonly AppDbContext _AppDbContext;

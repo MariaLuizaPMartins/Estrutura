@@ -13,8 +13,8 @@ namespace Estrutura.Data.Mappings
             builder.Property(p => p.Id).ValueGeneratedOnAdd();
 
             // Property
-            builder.Property(p => p.DataHoraCadastro).HasColumnType("datetime2").IsRequired();
-            builder.Property(p => p.DataHoraUltimaAlteracao).HasColumnType("datetime2").IsRequired();
+            builder.Property(p => p.DataHoraCadastro).HasColumnType("datetime2");
+            builder.Property(p => p.DataHoraUltimaAlteracao).HasColumnType("datetime2");
             builder.Property(p => p.Descricao).HasColumnType("varchar(50)").IsRequired();
 
             // Index

@@ -10,10 +10,8 @@ namespace Estrutura.Data.Repositories.CorRepository
         Task Excluir(Guid id);
         Task SalvarAlteracoes(Cor cor);
 
-
         Task<string> ObterDescricao(Guid id);
         Task<Cor> ObterParaAlterar(Guid id);
-
 
         bool VerificarSeDescricaoJaExiste(string descricao, Guid? id = null);
     }

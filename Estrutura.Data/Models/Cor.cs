@@ -1,6 +1,8 @@
-﻿namespace Estrutura.Data.Models
+﻿using Estrutura.Data.Models.Entity;
+
+namespace Estrutura.Data.Models
 {
-    public class Cor : Entity
+    public class Cor : EntityCadastroBase
     {
         public string Descricao { get; set; }
     }

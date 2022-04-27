@@ -46,8 +46,9 @@ namespace Estrutura.Business.Services.CorService
         {
             var cor = await _corRepository.ObterParaAlterar(alteracaoViewModel.Id);
 
-            if (!ValidarSeObjetoCorEstaPreenchido(cor))
+            if (cor == null)
             {
+                NotificarAvisoRegistroNaoEncontrada("cor");
                 return;
             }
 
@@ -75,7 +76,7 @@ namespace Estrutura.Business.Services.CorService
 
             if (string.IsNullOrEmpty(descricao))
             {
-                NotificarAviso(string.Format(ResourceMensagem.RegistroNaoEncontrada, "cor"));
+                NotificarAvisoRegistroNaoEncontrada("cor");
                 return;
             }
 
@@ -88,14 +89,15 @@ namespace Estrutura.Business.Services.CorService
         {
             var cor = await _corRepository.ObterParaAlterar(id);
 
-            if (!ValidarSeObjetoCorEstaPreenchido(cor))
+            if (cor == null)
             {
+                NotificarAvisoRegistroNaoEncontrada("cor");
                 return null;
             }
 
             var corViewModel = _mapper.Map<CorViewModel>(cor);
-            corViewModel.DataHoraCadastro = cor.ObterDataHoraCadastro(-3);
-            corViewModel.DataHoraUltimaAlteracao = cor.ObterDataHoraUltimaAlteracao(-3);
+            corViewModel.DataHoraCadastro = cor.DataHoraCadastro;
+            corViewModel.DataHoraUltimaAlteracao = cor.DataHoraUltimaAlteracao;
 
             return corViewModel;
         }
@@ -109,17 +111,6 @@ namespace Estrutura.Business.Services.CorService
             }
 
             return false;
-        }
-
-        private bool ValidarSeObjetoCorEstaPreenchido(Cor cor)
-        {
-            if (cor == null)
-            {
-                NotificarAviso(string.Format(ResourceMensagem.RegistroNaoEncontrada, "cor"));
-                return false;
-            }
-
-            return true;
         }
 
         private void GravarLog(string acao, string tela, string descricao)

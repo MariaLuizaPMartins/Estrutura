@@ -1,6 +1,8 @@
-﻿namespace Estrutura.Data.Models
+﻿using Estrutura.Data.Models.Entity;
+
+namespace Estrutura.Data.Models
 {
-    public class Tamanho : Entity
+    public class Tamanho : EntityCadastroBase
     {
         public string Descricao { get; set; }
     }

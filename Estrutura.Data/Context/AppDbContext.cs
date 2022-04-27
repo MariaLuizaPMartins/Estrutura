@@ -25,10 +25,12 @@ namespace Estrutura.Data.Context
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CorMapping());
+            modelBuilder.ApplyConfiguration(new OperacaoMapping());
             modelBuilder.ApplyConfiguration(new TamanhoMapping());
         }
 
         public DbSet<Cor> Cor { get; set; }
+        public DbSet<Operacao> Operacao { get; set; }
         public DbSet<Tamanho> Tamanho { get; set; }
     }
 }
