@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Estrutura.Data\Estrutura.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\MovimentacaoFinanceiraService\PedidoOrcamentoPagamentoService\" />
+  </ItemGroup>
+
 </Project>

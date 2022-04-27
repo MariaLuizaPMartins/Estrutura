@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Estrutura.Business.Services.OperacaoService.PedidoOrcamentoService
 {
-    public class PedidoOrcamentoService : BaseService
+    public class PedidoOrcamentoService : BaseService, IPedidoOrcamentoService
     {
         private readonly IOperacaoService _operacaoService;
         private readonly IOperacaoRepository _operacaoRepository;
